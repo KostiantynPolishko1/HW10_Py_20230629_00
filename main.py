@@ -180,7 +180,7 @@ def move_player(arr, move_num_cur):
 def print_menu(ind_pos, arr, name_f = ""):
     for i in range(len(arr)):
         if i == ind_pos:
-            print("-> {} {}".format(name_f, arr[i]))
+            print("-> \033[34m\033[43m{} {}\033[0m".format(name_f, arr[i]))
             continue
         print("   {} {}".format(name_f, arr[i]))
 
@@ -224,7 +224,7 @@ def new_game(game_level = None):
     fill_arr(arr_game)
     arr_game[1][1] = '@'
 
-    print("\n New game")
+    print("\n\033[34m\033[43m New game\033[0m")
 
     while level < level_lim:
 
@@ -254,7 +254,7 @@ def set_game(val = None):
     ind_set = 0
 
     while True:
-        print("\n Settings")
+        print("\n\033[34m\033[43m Settings\033[0m")
         print_menu(ind_set, arr_set, "Level")
         print(" \"w\" - Down, \"s\" - Up: -> ", end = '')
         ind_set, level_set = receive_pos(ind_set, "set")
@@ -265,7 +265,7 @@ def set_game(val = None):
             return ind_set
 
 def exit_game(val = None):
-    print("\n -> Exit")
+    print("\n\033[34m\033[43m Exit\033[0m")
     return True
 
 #======================main=============================#
